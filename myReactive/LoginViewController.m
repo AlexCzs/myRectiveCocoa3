@@ -33,6 +33,7 @@
     [self.view addSubview:self.loginView];
 }
 
+//绑定viewmodel
 - (void)binViewModel{
     [RACObserve(self.loginViewModel, avatarURL) subscribeNext:^(NSURL *avatarURL) {
         [self.loginView.imageV sd_setImageWithURL:self.loginViewModel.avatarURL];
