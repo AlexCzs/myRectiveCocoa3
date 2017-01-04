@@ -9,7 +9,7 @@
 #import "CaculateManager.h"
 
 @implementation CaculateManager
-+ (int)makeCaculators:(void(^)(CaculateMaker *make))block{
++ (int)makeCaculators:(void(^)(CaculateMaker *caculate))block{
     CaculateMaker *make = [[CaculateMaker alloc]init];
     block(make);
     return make.result;

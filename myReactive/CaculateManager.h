@@ -10,5 +10,5 @@
 #import "CaculateMaker.h"
 
 @interface CaculateManager : NSObject
-+ (int)makeCaculators:(void(^)(CaculateMaker *make))block;
++ (int)makeCaculators:(void(^)(CaculateMaker *caculate))block;
 @end

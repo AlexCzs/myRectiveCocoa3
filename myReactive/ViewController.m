@@ -23,7 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self loginVC];
+    [self test0];
 }
 
 - (void)loginVC{
@@ -131,8 +131,8 @@
 
 
 - (void)test0{
-    int result = [CaculateManager makeCaculators:^(CaculateMaker *make) {
-        make.add(1).add(2).add(3).sub(4).muilt(6);
+    int result = [CaculateManager makeCaculators:^(CaculateMaker *caculate) {
+        caculate.add(1).add(2).add(3).sub(4).muilt(6);
     }];
     NSLog(@"%zd",result);
 }
