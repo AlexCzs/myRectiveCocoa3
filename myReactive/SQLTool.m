@@ -30,9 +30,9 @@
 - (Select)select {
     return ^(NSArray<NSString *> *columns) {
         if (columns.count > 0) {
-            self.sql = [NSString stringWithFormat:@"SELECT %@", [columns componentsJoinedByString:@","]];
+            self.sql = [NSString stringWithFormat:@"select %@", [columns componentsJoinedByString:@","]];
         } else {
-            self.sql = @"SELECT *";
+            self.sql = @"select *";
         }
         //这里将自己返回出去
         return self;

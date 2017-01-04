@@ -13,6 +13,7 @@
 #import "AFNetworking.h"
 #import "LoginViewController.h"
 #import "OCLoginViewController.h"
+#import "SQLTool.h"
 
 
 @interface ViewController ()
@@ -23,7 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self test2];
+    [self SQLProtocol];
 }
 
 - (void)loginVC{
@@ -37,6 +38,13 @@
         OCLoginViewController *loginVC = [OCLoginViewController new];
         [self presentViewController:loginVC animated:YES completion:nil];
     }];
+}
+
+- (void)SQLProtocol{
+    NSString *sql = [SQLTool makeSQL:^(SQLTool<ISelectable> *tool) {
+        tool.select(nil).from(@"activityTable").where(@"id = 1298955");
+    }];
+    NSLog(@"%@",sql);
 }
 
 
