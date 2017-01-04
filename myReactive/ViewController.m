@@ -23,7 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self test0];
+    [self test2];
 }
 
 - (void)loginVC{
@@ -193,7 +193,7 @@
     
     // 3.发送信号
     [subject sendNext:@"1"];
-    
+    [subject sendNext:@"2"];
     
     // RACReplaySubject使用步骤:
     // 1.创建信号 [RACSubject subject]，跟RACSiganl不一样，创建信号时没有block。
@@ -226,6 +226,8 @@
         
         NSLog(@"第二个订阅者接收到的数据%@",x);
     }];
+    
+    [replaySubject sendNext:@3];
 }
 
 - (void)test3{
